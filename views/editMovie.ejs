@@ -1,0 +1,33 @@
+<form action="/movies/edit/<%= movie.id%>" method="POST">
+    titulo:
+    <input type="text" name="title" value="<%= movie.title%>"> <br>
+    rating:
+    <input type="text" name="rating" value="<%= movie.rating%>"> <br>
+    premios:
+    <input type="text" name="awards" value="<%= movie.awards%>"> <br>
+    duracion:
+    <input type="text" name="length" value="<%= movie.length%>"> <br>
+    genero:
+    <select name="genre_id" id="">
+        <% if(movie.genero == ''){ %>
+            <% for(var i=0; i < generos.length;i++) { %>
+                <% if(movie.genero.id == generos[i].id){ %>
+                    <option value="<%= generos[i].id %>" selected><%=generos[i].name%></option>
+                <% } else { %>
+                    <option value="<%=generos[i].id%>"><%=generos[i].name%></option>
+                <% } %>
+                <% } %>
+        <% } else { %>
+            <% for(var i=0; i < generos.length;i++) { %>
+            <% if(movie.genero.id == generos[i].id){ %>
+                <option value="<%= generos[i].id %>" selected><%=generos[i].name%></option>
+            <% } else { %>
+                <option value="<%=generos[i].id%>"><%=generos[i].name%></option>
+            <% } %>
+            <% } %>
+        <% } %>
+    </select> <br>
+    estreno:
+    <input type="date" name="release_date" value="<%= movie.release_date%>"> <br>
+    <button type="sumbit">Editar peli</button>
+</form>

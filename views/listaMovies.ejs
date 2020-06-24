@@ -1,0 +1,11 @@
+<h1>Pelis:</h1>
+    <ul>
+        <% movies.forEach(peli => { %>
+            <a href="/movies/detail/<%= peli.id%>">
+            <li><%= peli.title %> <br> </a>
+                <% if(peli.genero != null){%> 
+                    <%= peli.genero.name %>
+                <% } %>
+            </li>
+        <% }) %>
+    </ul>

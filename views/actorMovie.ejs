@@ -1,0 +1,14 @@
+<h1>Relacionar un actor con una pelicula</h1>
+<form action="/movies/actorMovie" method="POST">
+    <select name="actor_id" id="">
+        <% for(var i=0; i < actores.length;i++) { %>
+            <option value="<%=actores[i].id%>"><%=actores[i].first_name + actores[i].last_name%></option>
+        <% } %>
+    </select> <br> <br>
+    <select name="movie_id" id="">
+        <% for(var i=0; i < peliculas.length;i++) { %>
+            <option value="<%=peliculas[i].id%>"><%=peliculas[i].title%></option>
+        <% } %>
+    </select> <br>
+    <button type="submit">REALCIONAR</button>
+</form>

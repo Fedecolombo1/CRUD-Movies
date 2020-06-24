@@ -1,0 +1,24 @@
+<form action="/movies/create" method="POST">
+    titulo:
+    <input type="text" name="title"> <br>
+    rating:
+    <input type="text" name="rating"> <br>
+    premios:
+    <input type="text" name="awards"> <br>
+    duracion:
+    <input type="text" name="length"> <br>
+    genero:
+    <select name="genre_id" id="">
+        <% for(var i=0; i < generos.length;i++) { %>
+            <option value="<%=generos[i].id%>"><%=generos[i].name%></option>
+        <% } %>
+    </select> <br>
+    estreno:
+    <input type="date" name="release_date"> <br>
+    <% if(errors){ %>
+        <% for(var i = 0;i < errors.length;i++){ %>
+            <b style="background-color: red; color: white;"><%= errors[i].msg %></b>
+        <% } %>
+    <% } %>
+    <button type="sumbit" style="display: block;">Crear peli</button>
+</form>
